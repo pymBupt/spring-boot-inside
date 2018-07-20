@@ -14,14 +14,14 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @AutoConfigureBefore(EndpointAutoConfiguration.class)
 @AutoConfigureAfter(HealthIndicatorAutoConfiguration.class)
-@ConditionalOnClass(value = { HealthIndicator.class })
+@ConditionalOnClass(value = {HealthIndicator.class})
 // @ConditionalOnClass(value = {HealthIndicator.class, EndpointAutoConfiguration.class})
 public class MyHealthIndicatorAutoConfiguration {
 
-	@Bean
-	@ConditionalOnMissingBean(MyHealthIndicator.class)
-	@ConditionalOnEnabledHealthIndicator("my")
-	public MyHealthIndicator myHealthIndicator() {
-		return new MyHealthIndicator();
-	}
+    @Bean
+    @ConditionalOnMissingBean(MyHealthIndicator.class)
+    @ConditionalOnEnabledHealthIndicator("my")
+    public MyHealthIndicator myHealthIndicator() {
+        return new MyHealthIndicator();
+    }
 }
