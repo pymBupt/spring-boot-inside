@@ -14,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @AutoConfigureBefore(EndpointAutoConfiguration.class)
 @AutoConfigureAfter(HealthIndicatorAutoConfiguration.class)
-@ConditionalOnClass(value = {HealthIndicator.class})
-// @ConditionalOnClass(value = {HealthIndicator.class, EndpointAutoConfiguration.class})
+//@ConditionalOnClass(value = {HealthIndicator.class})
+@ConditionalOnClass(value = {HealthIndicator.class, EndpointAutoConfiguration.class})
 public class MyHealthIndicatorAutoConfiguration {
 
     @Bean
